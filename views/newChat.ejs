@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Chat</title>
+    <base href="http://localhost:3000">
+</head>
+<body>
+    <h1>Enter details of new chat</h1>
+    <form action="/chats" method="post">
+        <input type="text" name="from" placeholder="Enter Your name"> <br>
+        <input type="text" name="to" placeholder="recipient"> <br>
+        <textarea name="msg" cols="30" rows="10" placeholder="enter your message"></textarea><br>
+        <button>Create New Chat</button>
+    </form>
+</body>
+</html>

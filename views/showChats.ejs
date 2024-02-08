@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Chats</title>
+    <base href="http://localhost:3000">
+</head>
+<body>
+    <h1>All Chats can be seen here: </h1>
+    <!-- <h2><%= allChats %> </h2> -->
+    <div>
+        <% for(let chats of allChats){ %>
+            <h5>From : <%=chats.from%> </h5>
+            <h5>To : <%=chats.to%></h5>
+            <h5>Message : <%=chats.msg%></h5>
+            <p>Date : <%=chats.createdAt.toString().split(" ")[4] %> - <%=chats.createdAt.toString().split(" ").slice(0,4).join("-") %></p>
+            <h5>Id : <%=chats._id%></h5>
+            <!-- <form action="/chats/<%=chats._id%>/edit?_method=PUT" method="POST"><button>Edit this chat</button></form> -->
+            <form action="/chats/<%=chats._id%>/edit" method="get"><button>Edit this chat</button></form>
+            <form action="/chats/<%=chats._id%>?_method=DELETE" method="POST"><button>Delete</button></form>
+            <br><hr>
+            
+        <% } %>
+        <form action="/chats/new">
+            <button>New Chat</button>
+        </form>
+    </div>
+</body>
+</html>
